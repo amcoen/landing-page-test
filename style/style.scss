@@ -1,0 +1,390 @@
+/*Minireset*/
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+/*STYLE GENERAL*/
+$colors: (
+  blue01: #038aff,
+  blue02: #152d5b,
+  yellow: #febd3d
+);
+
+@font-face {
+    font-family: 'title-font';
+    src: url('../fonts/musticapro-semibold-webfont.eot');
+    src: url('../fonts/musticapro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/musticapro-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/musticapro-semibold-webfont.woff') format('woff'),
+         url('../fonts/musticapro-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/musticapro-semibold-webfont.svg#mustica_prosemi_bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1, h2, h3, h4, h5, h6, button, .active, .title-spend, .dollar, .vignette{
+    font-family: 'title-font', Arial, sans-serif; ;
+}
+h1{font-size:3em;}
+h2{font-size:2em;margin-bottom:30px;}
+h3{font-size: 1.5em;}
+h4{font-size:1.2em;}
+.text-under{font-size:1.2em;}
+.text-grey{color:#95a0b1;}
+.vignette{border-radius:100px;padding: 6px 12px 4px 12px;font-size:.8em;display:inline-block; margin-bottom:30px;}
+.card{box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;border-color:#e1e1e9 !important;border-radius:10px;}
+
+
+
+
+
+/*CORRECTIFS DE VIEWPORTS*/
+@media screen and (max-width: 991px) { 
+    .card-number{font-size:1.5em !important;}
+    .top-main{padding-top: 0vh !important;}
+    .left-part{margin-top: 5vh !important;}
+    .bloc{margin-top: 5vh !important;padding-top: 0vh !important;}
+    .tools .left-part{order: 2; margin-bottom:0;}
+    .tools .right-part{order: 1; margin-bottom:1vh;}
+    .technology .left-part-01{order: 2;}
+    .technology .left-part-02{order: 3;}
+    .technology .right-part{order: 1;margin-bottom:5vh;}
+    .card-03{margin-top:0px !important;}
+
+}
+@media screen and (min-width: 992px) { 
+.video-tools{
+    position: absolute;
+    top: -140px;
+    left: 250px;
+}
+}
+
+
+header{
+    background: map-get($colors , blue01 );
+    nav{
+        .container{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #4da2ff;
+            .nav-item, .btn-sign{
+                font-weight: 500;
+                margin: 0 15px;
+            }
+            .btn-buy{
+                font-size: .9em !important;
+                padding: 10px 25px;
+                border-radius: 10px;
+            }
+        }
+        
+    }
+}
+
+
+main{
+
+    /*PARTIE TOP : CARD, BG BLUE*/
+    .top-main{
+        background: map-get($colors , blue01 );
+        padding-top: 15vh;
+        padding-bottom: 15vh;
+
+        .left-part{
+            margin-top: 12vh;
+
+            .text-under{
+                margin-top: 30px;
+            }
+            .btn-started{
+                padding: 20px 40px;
+                border-radius: 10px;
+                margin-top: 30px;
+            }
+            .trusted{
+                margin-top:50px;
+                margin-bottom: 50px;
+                p {
+                    font-size:.9em;
+                }
+            }
+        }
+        .right-part{
+            .card-bloc{
+                padding-top:30px;
+                padding-bottom:60px;
+                border-radius: 10px 10px 70px 10px;
+            }
+            
+
+            h6, .title-spend{
+                color: map-get($colors , blue02 );
+            }
+
+            .card-content{
+                background-color:#1e1146;
+                border-radius: 10px;
+                background-image: url(../media/dot-map.svg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                margin-top: 30px !important;
+                height: 280px;
+
+                .logo{
+                    margin-top: 30px;
+                    img{
+                        width: 80%;
+                    }
+                    .active{
+                        background:#5bcaa6;
+                        padding: 5px 10px;
+                        border-radius: 10px;
+                    }
+                    
+                }
+                .card-label{
+                    text-transform: uppercase;
+                    font-size:.75em;
+                }
+                .number{
+                    margin-top:30px;
+                    .card-number{
+                        font-size: 2em;
+                    }
+                }
+                .infos{
+                    margin-top:30px;
+
+                    .infos-card{
+                        font-weight: 600;
+                    }
+                }
+            }
+            .logs-payment{
+
+                .logs-line{
+                    padding-top:15px;
+                    
+                    .title-spend{
+                        font-weight:normal;
+                    }
+                    .dollar{
+                        font-size:.9em;
+                    }
+                    .text-muted{
+                        border-bottom: 1px solid #e9ecf3;
+                        padding-bottom: 15px;
+                    }
+                }
+                .view-more{
+                    font-weight: 600;
+                    margin-top: 15px;
+                    display:inline-block;
+                    border-bottom: 2px dashed map-get($colors , blue01 );
+                    text-decoration: none;
+                }
+            }
+            
+            
+        }
+    }
+
+    .separator-blue{
+        img{
+            width: 100%;
+            margin-top:-1px;
+        }
+    }
+    .bloc{
+        padding-top:20vh;
+    }
+
+    .tools{
+        
+        .task{
+            margin-top: 30px;;
+            
+            .duration{
+                text-decoration: none;;
+            }
+            .progress{
+                height:3px;
+                margin-top: 20px;
+                .progress-bar{
+                    background: #fdb932 !important;
+                }
+            }
+        }
+        .vignette{
+            background: #fdb932 !important;
+        }
+
+        .video-tools{
+            background-image: url(../media/img_01.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width:100%;
+            height: 300px;
+            border-radius: 10px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            margin-top:30px;
+            margin-bottom:30px;
+
+          
+
+            button{
+                padding: 10px 25px;
+                margin-top: 15px;
+                font-size: .9em;
+            }
+        }
+    }
+    .features{
+
+         .left-part{
+            margin-top:10vh;
+         }
+         .vignette{
+             background: #5bc9a6;
+         }
+         ul{
+            color: #5bc9a6;
+            margin-top: 50px;
+            li{
+                margin-bottom: 20px;
+            }
+         }
+         .video-features{
+            background-image: url(../media/img_02.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width:100%;
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            margin-top:30px;
+            margin-bottom:30px;
+
+            button{
+                padding: 10px 25px;
+                margin-top: 15px;
+                font-size: .9em;
+            }
+        }
+    }
+    .technology{
+        
+        .vignette{background: map-get($colors , blue01 );}
+        .right-part{
+            .case{
+                border-bottom:2px solid map-get($colors , blue01 );
+                margin-top: 20px;
+                text-decoration: none;
+                display: inline-block;
+            }
+        }
+        .card{
+            margin-bottom:30px;
+
+            .profile-pic{
+                background : #fdb932;
+                display:inline-block;
+                text-align: center;
+                padding: 12px 15px;
+                border-radius:100%
+            }
+            .card-title{
+                margin-bottom:0 ;
+            }
+            .icon-love{padding: 12px 0;}
+        }
+
+        .card-02{
+            .profile-pic{background:#5bc9a6;}
+            .card-title{padding:0;}
+        }
+        .card-03{
+            padding-top:30px;
+            padding-bottom:30px;
+            margin-top: -5vh;
+            img{
+                width:40%;
+                margin: 0 auto;
+            }
+            .stars{
+                margin-bottom:20px;
+                .yellow{
+                    color:#fdb932 !important;
+                }
+                .bi-star{color:#d5dce6}
+            }
+        }
+        .card-04{
+            padding-top:30px;
+            padding-bottom:30px;
+            img{
+                width:30%;
+                margin: 0 auto;
+            }
+            .persons{
+                height: 70px;
+                img{
+                    border-radius:100px;
+                    border:4px solid #fff;
+                    position: absolute;
+                    width: 50px;;
+                }
+                img:nth-child(1){
+                    left: calc(35% - 25px);
+                }
+                img:nth-child(2){
+                    left: calc(50% - 25px);
+                }
+                img:nth-child(3){
+                    left: calc(65% - 25px);
+                }
+            }
+            .link{
+                padding-top: 20px;
+                border-top: 1px solid #e1e1e9;
+                
+                a{
+                    color:#727e98;
+                }
+            }
+        }
+    }
+    .easy{
+        .vignette{
+            background: #fdb932;
+        }
+        .video-features{
+           background-image: url(../media/img_03.jpg);
+           background-size: cover;
+           background-repeat: no-repeat;
+           width:100%;
+           height: 400px;
+           border-radius: 10px;
+           box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+           margin-top:30px;
+           margin-bottom:30px;
+
+           button{
+               padding: 10px 25px;
+               margin-top: 15px;
+               font-size: .9em;
+           }
+       }
+   }
+}
+
+
+
+
+
+
+
+
+
+
