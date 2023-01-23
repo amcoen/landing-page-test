@@ -5,7 +5,7 @@
 $colors: (
   blue01: #038aff,
   blue02: #152d5b,
-  yellow: #febd3d
+  yellow01: #febd3d
 );
 
 @font-face {
@@ -22,7 +22,9 @@ $colors: (
 }
 
 h1, h2, h3, h4, h5, h6, button, .active, .title-spend, .dollar, .vignette{
-    font-family: 'title-font', Arial, sans-serif; ;
+    font-family: 'title-font', Arial, sans-serif;
+    color: map-get($colors , blue02 );
+
 }
 h1{font-size:3em;}
 h2{font-size:2em;margin-bottom:30px;}
@@ -33,7 +35,23 @@ h4{font-size:1.2em;}
 .vignette{border-radius:100px;padding: 6px 12px 4px 12px;font-size:.8em;display:inline-block; margin-bottom:30px;}
 .card{box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;border-color:#e1e1e9 !important;border-radius:10px;}
 
-
+/*Style des dividers*/
+.divider{
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -1px !important;
+    &.separator-blue{
+        background-image: url(../media/separator-blue.svg);
+    }
+    &.separator-grey{
+        background-image: url(../media/separator-grey.svg);
+    }
+    &.separator-blue-dark{
+        background-image: url(../media/separator-blue-dark.svg);
+        margin-bottom: -1px !important;
+    }
+}
 
 
 
@@ -43,12 +61,22 @@ h4{font-size:1.2em;}
     .top-main{padding-top: 0vh !important;}
     .left-part{margin-top: 5vh !important;}
     .bloc{margin-top: 5vh !important;padding-top: 0vh !important;}
+    .bloc.awards{padding-top: 10vh !important;}
     .tools .left-part{order: 2; margin-bottom:0;}
     .tools .right-part{order: 1; margin-bottom:1vh;}
     .technology .left-part-01{order: 2;}
     .technology .left-part-02{order: 3;}
     .technology .right-part{order: 1;margin-bottom:5vh;}
     .card-03{margin-top:0px !important;}
+    .list-footer{margin-top: 5vh !important;}
+ 
+    .accordion-group{margin-top: 20px !important;}
+
+}
+@media screen and (max-width: 768px) { 
+    main .awards .cards-list > div{margin-top:5vh;}
+    main .awards .cards-list{margin-top:0 !important;}
+    main .awards .container-fluid {max-width: 540px;}
 
 }
 @media screen and (min-width: 992px) { 
@@ -60,13 +88,15 @@ h4{font-size:1.2em;}
 }
 
 
+
+
 header{
     background: map-get($colors , blue01 );
     nav{
         .container{
             padding-top: 20px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #4da2ff;
+            border-bottom: 1px solid #38a2ff;
             .nav-item, .btn-sign{
                 font-weight: 500;
                 margin: 0 15px;
@@ -189,12 +219,7 @@ main{
         }
     }
 
-    .separator-blue{
-        img{
-            width: 100%;
-            margin-top:-1px;
-        }
-    }
+    
     .bloc{
         margin-top:20vh;
     }
@@ -211,12 +236,12 @@ main{
                 height:3px;
                 margin-top: 20px;
                 .progress-bar{
-                    background: #fdb932 !important;
+                    background: map-get($colors , yellow01 ) !important;
                 }
             }
         }
         .vignette{
-            background: #fdb932 !important;
+            background: map-get($colors , yellow01 ) !important;
         }
 
         .video-tools{
@@ -288,7 +313,7 @@ main{
             margin-bottom:30px;
 
             .profile-pic{
-                background : #fdb932;
+                background : map-get($colors , yellow01 );
                 display:inline-block;
                 text-align: center;
                 padding: 12px 15px;
@@ -315,7 +340,7 @@ main{
             .stars{
                 margin-bottom:20px;
                 .yellow{
-                    color:#fdb932 !important;
+                    color:map-get($colors , yellow01 ) !important;
                 }
                 .bi-star{color:#d5dce6}
             }
@@ -359,7 +384,7 @@ main{
     }
     .easy{
         .vignette{
-            background: #fdb932;
+            background: map-get($colors , yellow01 );
         }
         .download-button{
             margin-top: 40px;
@@ -388,10 +413,14 @@ main{
        }
    }
    .infinite{
-            margin-bottom: 10vh;
-            background: #161348;
-            padding: 3%;
-            border-radius: 0 100px;
+
+            .bcg-group{
+                background: #161348;
+                padding: 5%;
+                border-radius: 0 100px;
+            }
+            margin-top: 10vh;
+            
 
             button{
                 padding: 20px 40px;
@@ -422,9 +451,14 @@ main{
                 .stars{
                     margin-bottom:20px;
                     .yellow{
-                        color:#fdb932 !important;
+                        color:map-get($colors , yellow01 ) !important;
                     }
-                    .bi-star{color:#d5dce6}
+                    .bi-star{
+                        color:#d5dce6;
+                        &:hover{
+                            cursor:pointer;
+                        }
+                    }
                 }
     
                 .link-learn{
@@ -445,6 +479,105 @@ main{
     }
     
    }
+   .helpful{
+    margin-top: 5vh !important;
+    .accordion-group{
+        margin-top: 10vh;
+
+        .card{
+            box-shadow: none;
+            border:none;
+
+            .card-header{
+                background: #fff;
+                margin-bottom: 20px;
+                border: 1px solid #e9ecf3;
+                border-radius: 18px;     
+                
+                button{
+                    font-size:1em;
+                    text-decoration: none;
+                    color: map-get($colors , blue02 );
+                }           
+            }
+        }
+    }
+    .project{
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+
+        button{
+            padding: 20px 40px;
+            border-radius: 10px;
+            margin-top: 30px;
+            &.btn-blue{
+                background: map-get($colors , blue01 );
+                color: #fff;
+            }
+            &.btn-learn{
+                background: #fff;
+                color: map-get($colors , blue02 );
+                border:none;
+            }
+        }
+
+        
+    }
+   }
+}
+
+footer{
+    .bottom{
+        background: map-get($colors , blue02 );
+        padding-top: 5vh;
+
+        button{
+            padding: 20px 40px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border:none;
+            &.btn-blue{
+                background: map-get($colors , blue01 );
+                color: #fff;
+                margin-left: 10px;
+            }
+
+        }
+
+        .part-01{
+            padding-bottom: 5vh;
+            border-bottom: 1px solid #1a3870;
+        }
+        .part-02{
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+            padding-bottom: 5vh;
+            border-bottom: 1px solid #1a3870;
+
+            img{
+                width: 20%;
+                margin-bottom:10px;
+            }
+            .odoo-desc{
+                margin-bottom:10px;
+            }
+            i{
+                margin-right:20px;
+            }
+            .list-footer{
+                h4{
+                    margin-bottom: 10px;;
+                }
+                li{
+                    opacity:0.75;
+                }
+            }
+        }
+        .part-03{
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
 }
 
 
